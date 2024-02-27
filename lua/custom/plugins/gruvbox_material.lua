@@ -15,7 +15,9 @@ return {
     -- Load the colorscheme here
     vim.cmd.colorscheme 'gruvbox-material'
 
-    -- You can configure highlights by doing something like
-    vim.cmd.hi 'Comment gui=none'
+    local hl_groups = { 'DiagnosticUnderlineError', 'DiagnosticUnderlineWarn', 'DiagnosticUnderlineInfo', 'DiagnosticUnderlineHint'};
+		for _, hl in ipairs(hl_groups) do
+			vim.cmd.highlight(hl .. ' gui=underline');
+		end;
   end,
 }
