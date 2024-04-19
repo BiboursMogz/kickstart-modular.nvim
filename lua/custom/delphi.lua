@@ -33,7 +33,8 @@ end
 
 local function find_delphi_lsp_settingfile()
   local a = util.root_pattern '*.delphilsp.json'
-  local b = a(util.path.sanitize(vim.loop.cwd()))
+  -- local b = a(util.path.sanitize(vim.loop.cwd()))
+  local b = a(util.path.sanitize(vim.fn.expand '%:p:h'))
   if b == nil then
     return ''
   end
