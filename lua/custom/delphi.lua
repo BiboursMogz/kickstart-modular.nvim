@@ -11,6 +11,10 @@ local util = require 'lspconfig.util'
 
 vim.wo.colorcolumn = '120'
 
+if vim.loop.os_uname().sysname ~= 'Windows' then
+  return
+end
+
 -- Check if the config is already defined (useful when reloading this file)
 if not configs.delphi_lsp then
   configs.delphi_lsp = {
