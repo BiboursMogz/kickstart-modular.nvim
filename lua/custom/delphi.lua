@@ -11,7 +11,7 @@ local util = require 'lspconfig.util'
 
 vim.wo.colorcolumn = '120'
 
-if vim.loop.os_uname().sysname ~= 'Windows' then
+if vim.loop.os_uname().sysname ~= 'Windows_NT' then
   return
 end
 
